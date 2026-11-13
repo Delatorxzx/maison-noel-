@@ -1,0 +1,412 @@
+
+/* ==================================================
+   PARTE 1 — NICOLAS
+   RESPONSIVIDADE DO CABEÇALHO E RODAPÉ
+================================================== */
+
+@media (max-width: 1050px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 22px 4%;
+    }
+
+    .navegacao {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+    .cabecalho__botao {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .cabecalho {
+        gap: 18px 12px;
+        padding: 20px 5%;
+    }
+
+    .marca__nome {
+        font-size: 25px;
+    }
+
+    .marca__descricao {
+        font-size: 8px;
+        letter-spacing: 1.8px;
+    }
+
+    .cabecalho__botao {
+        min-height: 39px;
+        gap: 7px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .navegacao {
+        gap: 8px 19px;
+    }
+
+    .navegacao__link {
+        font-size: 11px;
+    }
+
+    .rodape {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 30px 5%;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DO DESTAQUE
+================================================== */
+
+@media (max-width: 900px) {
+    .destaque {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 35px;
+        padding: 65px 5%;
+    }
+
+    .destaque__imagem {
+        height: 360px;
+    }
+
+    .destaque h1 {
+        font-size: 48px;
+    }
+
+    .destaque__decoracao {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .destaque {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding: 65px 7%;
+    }
+
+    .destaque__conteudo {
+        max-width: 100%;
+    }
+
+    .destaque h1 {
+        font-size: clamp(43px, 11vw, 58px);
+    }
+
+    .destaque__texto {
+        font-size: 13px;
+    }
+
+    .destaque__imagem {
+        height: 340px;
+        margin-right: 12px;
+    }
+
+    .destaque__acoes {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .destaque__imagem {
+        height: 270px;
+    }
+
+    .destaque__legenda {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DA APRESENTAÇÃO
+================================================== */
+
+@media (max-width: 700px) {
+    .apresentacao {
+        padding: 75px 7%;
+    }
+
+    .apresentacao__conteudo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .apresentacao__detalhes {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 55px;
+    }
+
+    .detalhe {
+        padding-bottom: 22px;
+        border-bottom: 1px solid var(--linha);
+    }
+
+    .detalhe h3 {
+        margin-top: 7px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DA COLEÇÃO
+================================================== */
+
+@media (max-width: 1000px) {
+    .colecao__produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 22px;
+    }
+
+    .produto-destaque__imagem {
+        height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .colecao {
+        padding: 75px 6%;
+    }
+
+    .colecao__cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .colecao__produtos {
+        gap: 30px 14px;
+    }
+
+    .produto-destaque__imagem {
+        height: 210px;
+    }
+
+    .produto-destaque__informacoes h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .colecao__produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-destaque__imagem {
+        height: 280px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DOS PRESENTES
+================================================== */
+
+@media (max-width: 800px) {
+    .presentes {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 75px 7%;
+    }
+
+    .presentes__conteudo {
+        max-width: 600px;
+    }
+
+    .presentes__imagem {
+        height: 380px;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .presentes {
+        padding: 65px 6%;
+    }
+
+    .presentes__imagem {
+        height: 290px;
+    }
+
+    .presentes__conteudo h2 {
+        font-size: 42px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DAS OFERTAS
+================================================== */
+
+@media (max-width: 800px) {
+    .oferta {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 75px 7%;
+    }
+
+    .oferta__detalhes {
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 500px) {
+    .oferta {
+        padding: 65px 6%;
+    }
+
+    .oferta__conteudo h2 {
+        font-size: 42px;
+    }
+
+    .oferta__item p {
+        font-size: 18px;
+    }
+}
+
+/* ==================================================
+   PARTE 2 — CABRAL
+   RESPONSIVIDADE DA PÁGINA DE PRODUTOS
+================================================== */
+
+@media (max-width: 1000px) {
+    .catalogo__produtos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .pagina-produtos {
+        min-height: 280px;
+        padding: 65px 7%;
+    }
+
+    .catalogo {
+        padding: 65px 25px 80px;
+    }
+
+    .catalogo__produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .catalogo__cabecalho {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .catalogo__filtros {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .catalogo__produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-produtos h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cartao-produto__imagem {
+        height: 280px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DAS PÁGINAS INTERNAS E GALERIA
+================================================== */
+
+@media (max-width: 950px) {
+    .galeria__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cabecalho-interno {
+        min-height: 320px;
+        padding: 65px 7%;
+    }
+
+    .cabecalho-interno h1 {
+        font-size: clamp(38px, 9vw, 48px);
+    }
+
+    .galeria {
+        padding: 65px 7%;
+    }
+
+    .galeria__grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .galeria__item img {
+        aspect-ratio: 1 / 1; /* Transforma em imagens quadradas no celular */
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DAS PÁGINAS SOBRE E CONTATO
+================================================== */
+
+@media (max-width: 950px) {
+    .sobre__conteudo {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sobre__valores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contato__grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 650px) {
+    .sobre {
+        padding: 65px 7%;
+    }
+
+    .sobre__valores {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+    }
+
+    .contato {
+        padding: 65px 7%;
+    }
+
+    .contato__formulario {
+        padding: 30px 20px;
+    }
+
+    .formulario__linha {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

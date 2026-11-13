@@ -1,0 +1,897 @@
+/* ==================================================
+   MAISON NOËL — PARTE 1
+   RESPONSÁVEL: NICOLAS
+================================================== */
+
+
+/* ==================================================
+   01. IDENTIDADE VISUAL E CONFIGURAÇÕES GERAIS
+================================================== */
+
+/* MAISON NOËL — IDENTIDADE VISUAL */
+
+:root {
+    --verde: #173C30;
+    --verde-profundo: #102B23;
+    --dourado: #B28A45;
+    --creme: #F7F1E5;
+    --vinho: #542B32;
+    --branco: #FFFFFF;
+    --texto: #292722;
+    --texto-suave: #777268;
+    --linha: rgba(23, 60, 48, 0.16);
+
+    --fonte-titulo: "Playfair Display", Georgia, serif;
+    --fonte-texto: "DM Sans", Arial, sans-serif;
+
+    --largura-conteudo: 1240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--creme);
+    color: var(--texto);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--dourado);
+    outline-offset: 4px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--verde);
+    color: var(--creme);
+}
+
+
+/* ==================================================
+   02. CABEÇALHO E NAVEGAÇÃO
+================================================== */
+
+/* CABEÇALHO */
+
+.cabecalho {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    min-height: 104px;
+    padding: 20px max(5.5%, calc((100% - var(--largura-conteudo)) / 2));
+
+    background: var(--creme);
+    border-bottom: 1px solid var(--linha);
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1px;
+}
+
+.marca__nome {
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.marca__descricao {
+    color: var(--dourado);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 2.3vw, 34px);
+}
+
+.navegacao__link {
+    position: relative;
+    padding: 8px 0;
+
+    color: var(--texto-suave);
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: color 200ms ease;
+}
+
+.navegacao__link:hover,
+.navegacao__link--ativo {
+    color: var(--verde);
+}
+
+.navegacao__link--ativo::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 1px;
+    background: var(--dourado);
+    content: "";
+}
+
+.cabecalho__botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    min-height: 44px;
+    padding: 0 18px;
+
+    background: var(--verde);
+    color: var(--creme);
+    border: 1px solid var(--verde);
+
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition:
+        background 200ms ease,
+        color 200ms ease,
+        border-color 200ms ease;
+}
+
+.cabecalho__botao:hover {
+    background: transparent;
+    color: var(--verde);
+}
+
+.cabecalho__botao span {
+    color: var(--dourado);
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   03. RODAPÉ
+================================================== */
+
+/* RODAPÉ */
+
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    padding: 34px 5.5%;
+
+    background: var(--verde-profundo);
+    color: var(--creme);
+}
+
+.marca--rodape .marca__nome {
+    color: var(--creme);
+    font-size: 24px;
+}
+
+.marca--rodape .marca__descricao {
+    color: #D6B77D;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.rodape__texto,
+.rodape__ano {
+    color: rgba(247, 241, 229, 0.72);
+    font-size: 11px;
+}
+
+.rodape__ano {
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   04. ACESSIBILIDADE E MOVIMENTO
+================================================== */
+
+/* ACESSIBILIDADE E MOVIMENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ==================================================
+   05. DESTAQUE PRINCIPAL
+================================================== */
+
+/* DESTAQUE PRINCIPAL */
+
+.destaque {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 7%;
+
+    min-height: 590px;
+    padding: 75px max(7%, calc((100% - 1160px) / 2));
+
+    overflow: hidden;
+    background: var(--verde);
+    color: var(--creme);
+}
+
+.destaque__conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+}
+
+.destaque__etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-bottom: 28px;
+
+    color: #D6B77D;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.destaque__etiqueta span {
+    width: 24px;
+    height: 1px;
+    background: var(--dourado);
+}
+
+.destaque h1 {
+    max-width: 540px;
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(46px, 5.2vw, 72px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.destaque h1 em {
+    display: block;
+    color: #D6B77D;
+    font-weight: 400;
+}
+
+.destaque__texto {
+    max-width: 430px;
+    margin-top: 25px;
+
+    color: rgba(247, 241, 229, 0.78);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.destaque__acoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin-top: 36px;
+}
+
+.botao-destaque {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    min-height: 52px;
+    padding: 0 21px;
+
+    background: var(--creme);
+    color: var(--verde);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition:
+        background 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.botao-destaque:hover {
+    background: #D6B77D;
+    transform: translateY(-3px);
+}
+
+.botao-destaque span {
+    font-size: 17px;
+}
+
+.destaque__nota {
+    color: rgba(247, 241, 229, 0.65);
+    font-family: var(--fonte-titulo);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.destaque__imagem {
+    position: relative;
+    height: 430px;
+    min-width: 0;
+}
+
+.destaque__imagem::before {
+    position: absolute;
+    inset: 13px -13px -13px 13px;
+
+    border: 1px solid rgba(214, 183, 125, 0.55);
+    content: "";
+}
+
+.destaque__imagem img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destaque__legenda {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    width: 100%;
+    padding: 17px 20px;
+
+    background: rgba(16, 43, 35, 0.88);
+    color: var(--creme);
+
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+}
+
+.destaque__decoracao {
+    position: absolute;
+    right: 48%;
+    bottom: 35px;
+
+    color: rgba(214, 183, 125, 0.16);
+    font-size: 150px;
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   06. APRESENTAÇÃO DA CONFEITARIA
+================================================== */
+
+/* APRESENTAÇÃO DA CONFEITARIA */
+
+.apresentacao {
+    padding: 105px max(7%, calc((100% - 1160px) / 2));
+    background: var(--creme);
+}
+
+.apresentacao__topo {
+    max-width: 650px;
+}
+
+.apresentacao__etiqueta {
+    color: var(--dourado);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.apresentacao__topo h2 {
+    margin-top: 19px;
+
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(37px, 4vw, 54px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.apresentacao__topo h2 em {
+    color: var(--vinho);
+    font-weight: 400;
+}
+
+.apresentacao__conteudo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+
+    margin-top: 28px;
+}
+
+.apresentacao__texto {
+    max-width: 530px;
+
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.apresentacao__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--dourado);
+
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    transition: gap 200ms ease;
+}
+
+.apresentacao__link:hover {
+    gap: 22px;
+}
+
+.apresentacao__detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+
+    margin-top: 85px;
+    padding-top: 32px;
+
+    border-top: 1px solid var(--linha);
+}
+
+.detalhe {
+    padding-right: 20px;
+}
+
+.detalhe__numero {
+    color: var(--dourado);
+    font-family: var(--fonte-titulo);
+    font-size: 17px;
+}
+
+.detalhe h3 {
+    margin-top: 15px;
+
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.detalhe p {
+    max-width: 260px;
+    margin-top: 9px;
+
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   07. COLEÇÃO DE PRODUTOS EM DESTAQUE
+================================================== */
+
+/* COLEÇÃO DE PRODUTOS EM DESTAQUE */
+
+.colecao {
+    padding: 100px max(7%, calc((100% - 1160px) / 2));
+    background: #F0E9DC;
+}
+
+.colecao__cabecalho {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.colecao__etiqueta {
+    color: var(--dourado);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.colecao__cabecalho h2 {
+    margin-top: 15px;
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(35px, 4vw, 51px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.colecao__cabecalho h2 em {
+    color: var(--vinho);
+    font-weight: 400;
+}
+
+.colecao__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--dourado);
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: gap 200ms ease;
+}
+
+.colecao__link:hover {
+    gap: 20px;
+}
+
+.colecao__produtos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.produto-destaque {
+    min-width: 0;
+}
+
+.produto-destaque__imagem {
+    position: relative;
+    display: block;
+    height: 280px;
+    overflow: hidden;
+    background: #E4DACA;
+}
+
+.produto-destaque__imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.produto-destaque__imagem:hover img {
+    transform: scale(1.06);
+}
+
+.produto-destaque__selo {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 7px 10px;
+    background: var(--creme);
+    color: var(--verde);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.produto-destaque__informacoes {
+    padding-top: 17px;
+}
+
+.produto-destaque__categoria {
+    color: var(--dourado);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.produto-destaque__informacoes h3 {
+    min-height: 52px;
+    margin-top: 8px;
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.produto-destaque__rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+    padding-top: 12px;
+    border-top: 1px solid var(--linha);
+}
+
+.produto-destaque__rodape span {
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.produto-destaque__rodape a {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--linha);
+    color: var(--verde);
+    transition: background 200ms ease, color 200ms ease;
+}
+
+.produto-destaque__rodape a:hover {
+    background: var(--verde);
+    color: var(--creme);
+}
+
+
+/* ==================================================
+   08. SEÇÃO DE PRESENTES
+================================================== */
+
+/* SEÇÃO DE PRESENTES */
+
+.presentes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8%;
+
+    padding: 95px max(7%, calc((100% - 1160px) / 2));
+
+    background: var(--verde-profundo);
+    color: var(--creme);
+}
+
+.presentes__conteudo {
+    max-width: 480px;
+}
+
+.presentes__etiqueta {
+    color: #D6B77D;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.presentes__conteudo h2 {
+    margin-top: 22px;
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(38px, 4.2vw, 57px);
+    font-weight: 400;
+    line-height: 1.18;
+}
+
+.presentes__conteudo h2 em {
+    display: block;
+    color: #D6B77D;
+    font-weight: 400;
+}
+
+.presentes__conteudo p {
+    max-width: 420px;
+    margin-top: 23px;
+
+    color: rgba(247, 241, 229, 0.75);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.presentes__botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 32px;
+    padding: 15px 20px;
+
+    background: var(--creme);
+    color: var(--verde);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition:
+        background 200ms ease,
+        transform 200ms ease;
+}
+
+.presentes__botao:hover {
+    background: #D6B77D;
+    transform: translateY(-3px);
+}
+
+.presentes__botao span {
+    font-size: 17px;
+}
+
+.presentes__imagem {
+    position: relative;
+    height: 410px;
+    min-width: 0;
+}
+
+.presentes__imagem::before {
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+
+    border: 1px solid rgba(214, 183, 125, 0.5);
+    content: "";
+}
+
+.presentes__imagem img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.presentes__assinatura {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    width: 100%;
+    padding: 18px 20px;
+
+    background: rgba(16, 43, 35, 0.88);
+    color: var(--creme);
+}
+
+.presentes__assinatura span:first-child {
+    font-family: var(--fonte-titulo);
+    font-size: 17px;
+}
+
+.presentes__assinatura span:last-child {
+    color: #D6B77D;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+/* EFEITO DE NEVE */
+
+.camada-neve {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.floco-neve {
+    position: absolute;
+    top: -30px;
+    color: #FFFFFF;
+    animation: queda-neve linear infinite;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    user-select: none;
+}
+
+@keyframes queda-neve {
+    0% {
+        transform: translateY(-30px) translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(25px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(105vh) translateX(-20px) rotate(360deg);
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    .floco-neve {
+        animation: none;
+        display: none;
+    }
+}
+/* BOTÃO DE ÁUDIO NATALINO */
+
+.controle-audio {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 10000;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid var(--dourado);
+    border-radius: 50%;
+
+    background: var(--verde);
+    color: var(--creme);
+
+    font-size: 22px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.controle-audio:hover {
+    background: var(--dourado);
+    transform: scale(1.08);
+}

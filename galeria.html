@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- BLOCO 01 — CONFIGURAÇÕES DO DOCUMENTO -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeria de fotos Maison Noël — confira os detalhes das nossas criações artesanais e produtos de Natal.">
+    <title>Galeria | Maison Noël</title>
+
+    <!-- BLOCO 02 — FONTES E ARQUIVOS EXTERNOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/nicolas.css">
+    <link rel="stylesheet" href="css/cabral.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BLOCO 03 — CABEÇALHO E NAVEGAÇÃO -->
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="Maison Noël — página inicial">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">CONFEITARIA ARTESANAL</span>
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a class="navegacao__link" href="index.html">Início</a>
+            <a class="navegacao__link" href="produtos.html">Coleção de Natal</a>
+            <a class="navegacao__link" href="sobre.html">Nossa história</a>
+
+            <!-- CLASSE ATIVA DA PÁGINA -->
+            <a class="navegacao__link navegacao__link--ativo" href="galeria.html" aria-current="page">Galeria</a>
+
+            <a class="navegacao__link" href="contato.html">Contato</a>
+        </nav>
+
+        <a class="cabecalho__botao" href="produtos.html">
+            Descobrir sabores
+            <span aria-hidden="true">↗</span>
+        </a>
+    </header>
+
+    <!-- BLOCO 04 — CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- BLOCO 05 — APRESENTAÇÃO DA GALERIA -->
+        <section class="cabecalho-interno">
+            <div class="cabecalho-interno__conteudo">
+                <span class="cabecalho-interno__etiqueta">NOSSO TRABALHO</span>
+                <h1>
+                    Detalhes que
+                    <em>encantam.</em>
+                </h1>
+                <p>
+                    Um olhar de perto sobre nossa produção artesanal, ingredientes selecionados e os momentos que ajudamos a criar.
+                </p>
+            </div>
+        </section>
+
+        <!-- BLOCO 06 — ESTRUTURA DA GALERIA -->
+        <section class="galeria">
+            <div class="galeria__grid">
+
+                <!-- BLOCO 07 — PRIMEIRA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-1.webp"
+                        alt="Detalhe da massa de panetone artesanal sendo preparada"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">Preparo da nossa massa de fermentação natural.</figcaption>
+                </figure>
+
+                <!-- BLOCO 08 — SEGUNDA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-2.jpeg"
+                        alt="Caixas de presentes de Natal da Maison Noël empilhadas"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">Embalagens pensadas para presentear quem você ama.</figcaption>
+                </figure>
+
+                <!-- BLOCO 09 — TERCEIRA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-3.jpg"
+                        alt="Mesa decorada com nossos biscoitos natalinos e doces"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">Nossos doces compondo a magia da ceia.</figcaption>
+                </figure>
+
+                <!-- BLOCO 10 — QUARTA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-4.jpg"
+                        alt="Confeiteiro finalizando a decoração de um bolo de nozes"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">Finalização cuidadosa, feita 100% à mão.</figcaption>
+                </figure>
+
+                <!-- BLOCO 11 — QUINTA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-5.jpg"
+                        alt="Fatia de panetone trufado de chocolate belga"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">A textura perfeita do nosso panetone mais pedido.</figcaption>
+                </figure>
+
+                <!-- BLOCO 12 — SEXTA IMAGEM -->
+                <figure class="galeria__item">
+                    <img
+                        src="img/galeria/galeria-6.jpg"
+                        alt="Ingredientes frescos como nozes, chocolate e frutas cristalizadas"
+                        loading="lazy"
+                    >
+                    <figcaption class="galeria__legenda">Seleção rigorosa dos melhores ingredientes.</figcaption>
+                </figure>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- BLOCO 13 — RODAPÉ -->
+    <footer class="rodape">
+        <a class="marca marca--rodape" href="index.html">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">O sabor de um Natal inesquecível.</span>
+        </a>
+
+        <p class="rodape__texto">
+            Confeitaria artesanal • Uma celebração em cada detalhe.
+        </p>
+
+        <span class="rodape__ano">Natal com sabor de tradição.</span>
+    </footer>
+
+    <!-- BLOCO 14 — CONTROLE DE ÁUDIO NATALINO -->
+    <button id="controleAudio" class="controle-audio" aria-label="Ativar som natalino">
+        🔔
+    </button>
+
+    <audio id="somNatal" loop preload="auto">
+        <source src="audio/sinos-natalinos.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>

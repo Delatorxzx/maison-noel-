@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- BLOCO 01 — CONFIGURAÇÕES DO DOCUMENTO -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a história da Maison Noël. Tradição, ingredientes selecionados e amor pela confeitaria artesanal.">
+
+    <title>Nossa História | Maison Noël</title>
+
+
+    <!-- BLOCO 02 — FONTES E ARQUIVOS EXTERNOS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/nicolas.css">
+    <link rel="stylesheet" href="css/cabral.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body>
+
+
+    <!-- BLOCO 03 — CABEÇALHO E NAVEGAÇÃO -->
+
+    <header class="cabecalho">
+
+        <a class="marca" href="index.html" aria-label="Maison Noël — página inicial">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">CONFEITARIA ARTESANAL</span>
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a class="navegacao__link" href="index.html">Início</a>
+            <a class="navegacao__link" href="produtos.html">Coleção de Natal</a>
+            <a class="navegacao__link navegacao__link--ativo" href="sobre.html" aria-current="page">Nossa história</a>
+            <a class="navegacao__link" href="galeria.html">Galeria</a>
+            <a class="navegacao__link" href="contato.html">Contato</a>
+        </nav>
+
+        <a class="cabecalho__botao" href="produtos.html">
+            Descobrir sabores
+            <span aria-hidden="true">↗</span>
+        </a>
+
+    </header>
+
+
+    <!-- BLOCO 04 — CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+
+        <!-- BLOCO 05 — APRESENTAÇÃO DA HISTÓRIA -->
+
+        <section class="cabecalho-interno">
+
+            <div class="cabecalho-interno__conteudo">
+
+                <span class="cabecalho-interno__etiqueta">
+                    TRADIÇÃO DESDE 2010
+                </span>
+
+                <h1>
+                    A arte de
+                    <em>fazer memórias.</em>
+                </h1>
+
+                <p>
+                    Tudo começou com uma receita de família e o desejo de tornar a época mais especial do ano ainda mais doce e inesquecível.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BLOCO 06 — HISTÓRIA E ESSÊNCIA DA CONFEITARIA -->
+
+        <section class="sobre">
+
+            <div class="sobre__conteudo">
+
+                <div class="sobre__texto">
+
+                    <h2>Nossa Essência</h2>
+
+                    <p>
+                        A Maison Noël nasceu em uma pequena cozinha, movida pela paixão de criar doces que não apenas alimentam, mas que contam histórias. Acreditamos que o Natal é feito de partilha, e cada panetone que sai dos nossos fornos carrega um pedacinho desse sentimento.
+                    </p>
+
+                    <p>
+                        Ao longo dos anos, crescemos, mas nossa filosofia permanece intacta: respeito ao tempo dos ingredientes, fermentação natural longa e produção 100% artesanal, sem atalhos.
+                    </p>
+
+                </div>
+
+                <div class="sobre__imagem">
+
+                    <img src="img/sobre/nossa-historia.jpg" alt="Confeiteira sovando a massa artesanal" loading="lazy">
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOCO 07 — VALORES DA MAISON NOËL -->
+
+            <div class="sobre__valores">
+
+                <article class="valor">
+
+                    <h3>Ingredientes Puros</h3>
+
+                    <p>
+                        Selecionamos farinhas especiais, manteiga de verdade e chocolates de origem. Sem conservantes artificiais.
+                    </p>
+
+                </article>
+
+                <article class="valor">
+
+                    <h3>Fermentação Lenta</h3>
+
+                    <p>
+                        Nossas massas descansam por até 48 horas, garantindo uma textura macia, úmida e de fácil digestão.
+                    </p>
+
+                </article>
+
+                <article class="valor">
+
+                    <h3>Feito à Mão</h3>
+
+                    <p>
+                        Do primeiro misturar de ingredientes até o laço da fita na embalagem final, tudo tem o toque humano.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BLOCO 08 — RODAPÉ -->
+
+    <footer class="rodape">
+
+        <a class="marca marca--rodape" href="index.html">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">O sabor de um Natal inesquecível.</span>
+        </a>
+
+        <p class="rodape__texto">
+            Confeitaria artesanal • Uma celebração em cada detalhe.
+        </p>
+
+        <span class="rodape__ano">
+            Natal com sabor de tradição.
+        </span>
+
+    </footer>
+
+
+    <!-- BLOCO 09 — CONTROLE DE ÁUDIO NATALINO -->
+
+    <button id="controleAudio" class="controle-audio" aria-label="Ativar som natalino">
+        🔔
+    </button>
+
+    <audio id="somNatal" loop preload="auto">
+        <source src="audio/sinos-natalinos.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>

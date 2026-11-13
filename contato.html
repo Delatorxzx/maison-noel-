@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- BLOCO 01 — CONFIGURAÇÕES DO DOCUMENTO -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Maison Noël para encomendas, dúvidas e presentes corporativos.">
+    <title>Contato | Maison Noël</title>
+
+    <!-- BLOCO 02 — FONTES E ARQUIVOS EXTERNOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/nicolas.css">
+    <link rel="stylesheet" href="css/cabral.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BLOCO 03 — CABEÇALHO E NAVEGAÇÃO -->
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="Maison Noël — página inicial">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">CONFEITARIA ARTESANAL</span>
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a class="navegacao__link" href="index.html">Início</a>
+            <a class="navegacao__link" href="produtos.html">Coleção de Natal</a>
+            <a class="navegacao__link" href="sobre.html">Nossa história</a>
+            <a class="navegacao__link" href="galeria.html">Galeria</a>
+            <a class="navegacao__link navegacao__link--ativo" href="contato.html" aria-current="page">Contato</a>
+        </nav>
+
+        <a class="cabecalho__botao" href="produtos.html">
+            Descobrir sabores
+            <span aria-hidden="true">↗</span>
+        </a>
+    </header>
+
+    <!-- BLOCO 04 — CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- BLOCO 05 — APRESENTAÇÃO DA PÁGINA -->
+        <section class="cabecalho-interno">
+            <div class="cabecalho-interno__conteudo">
+                <span class="cabecalho-interno__etiqueta">FALE CONOSCO</span>
+                <h1>
+                    Faça sua
+                    <em>encomenda.</em>
+                </h1>
+                <p>
+                    Dúvidas sobre produtos, pedidos especiais ou presentes corporativos? Nossa equipe está pronta para atender você.
+                </p>
+            </div>
+        </section>
+
+        <!-- BLOCO 06 — SEÇÃO DE CONTATO -->
+        <section class="contato">
+            <div class="contato__grid">
+
+                <!-- BLOCO 07 — INFORMAÇÕES DE CONTATO -->
+                <div class="contato__info">
+                    <h2>Informações</h2>
+                    <p>Produzimos fornadas limitadas diariamente. Recomendamos fazer suas encomendas de Natal com antecedência.</p>
+
+                    <ul class="contato__lista">
+                        <li>
+                            <strong>Endereço</strong>
+                            Rua das Amêndoas, 123 - Jardins, São Paulo/SP
+                        </li>
+                        <li>
+                            <strong>Telefone / WhatsApp</strong>
+                            (11) 99999-0000
+                        </li>
+                        <li>
+                            <strong>Horário de Funcionamento</strong>
+                            Segunda a Sexta: 09h às 19h<br>
+                            Sábados: 09h às 14h
+                        </li>
+                        <li>
+                            <strong>E-mail</strong>
+                            encomendas@maisonnoel.com.br
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BLOCO 08 — FORMULÁRIO DE CONTATO -->
+                <form class="contato__formulario" action="#" method="POST">
+
+                    <!-- BLOCO 09 — CAMPO DE NOME -->
+                    <div class="formulario__grupo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Ex: Maria Silva">
+                    </div>
+
+                    <!-- BLOCO 10 — CAMPOS DE E-MAIL E TELEFONE -->
+                    <div class="formulario__linha">
+                        <div class="formulario__grupo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        </div>
+                        <div class="formulario__grupo">
+                            <label for="telefone">WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 90000-0000">
+                        </div>
+                    </div>
+
+                    <!-- BLOCO 11 — SELEÇÃO DO ASSUNTO -->
+                    <div class="formulario__grupo">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto">
+                            <option value="encomenda">Fazer uma encomenda</option>
+                            <option value="corporativo">Presentes corporativos</option>
+                            <option value="duvida">Dúvida geral</option>
+                        </select>
+                    </div>
+
+                    <!-- BLOCO 12 — CAMPO DE MENSAGEM -->
+                    <div class="formulario__grupo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+                    </div>
+
+                    <!-- BLOCO 13 — BOTÃO DE ENVIO -->
+                    <button type="submit" class="formulario__botao">
+                        Enviar mensagem
+                        <span aria-hidden="true">↗</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- BLOCO 14 — RODAPÉ -->
+    <footer class="rodape">
+        <a class="marca marca--rodape" href="index.html">
+            <span class="marca__nome">Maison Noël</span>
+            <span class="marca__descricao">O sabor de um Natal inesquecível.</span>
+        </a>
+        <p class="rodape__texto">Confeitaria artesanal • Uma celebração em cada detalhe.</p>
+        <span class="rodape__ano">Natal com sabor de tradição.</span>
+    </footer>
+
+    <!-- BLOCO 15 — CONTROLE DE ÁUDIO NATALINO -->
+    <button id="controleAudio" class="controle-audio" aria-label="Ativar som natalino">
+        🔔
+    </button>
+
+    <audio id="somNatal" loop preload="auto">
+        <source src="audio/sinos-natalinos.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
